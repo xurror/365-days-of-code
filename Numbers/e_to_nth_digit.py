@@ -10,7 +10,6 @@ def factorial(n):
 def eulersNumber(limit):
     # Initialise Euler's Number
     e = 1
-
     while limit > 0:
         e += 1/factorial(limit)
         limit -= 1
@@ -18,6 +17,8 @@ def eulersNumber(limit):
     return e
 
 if __name__ == "__main__":
-    number_of_dp = int(input("Enter the number of decimal places: "))        
-
-    print(f"{eulersNumber(200):.{number_of_dp}f}")
+    try:
+        number_of_dp = int(input("Enter the number of decimal places: "))        
+        print(f"{eulersNumber(200):.{number_of_dp}f}")
+    except KeyboardInterrupt:
+        exit()

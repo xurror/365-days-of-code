@@ -18,14 +18,18 @@ class Fibonacci(object):
         return numerator/denominator
 
 if __name__ == "__main__":
-    number = int(input("Enter a number: "))
-    term = 2
+    try:
+        number = int(input("Enter a number: "))
+        term = 2
 
-    print("Term \t Sequence")
-    print(f"{0:2}{0:10}\n{1:2}{1:10}")
-    
-    while term <= number:
-        fibonacci_1 = Fibonacci(term - 1)
-        fibonacci_2 = Fibonacci(term - 2)
-        print(f"{term:2}{round(fibonacci_2.binetsFormula() + fibonacci_1.binetsFormula()):10}")
-        term += 1
+        print("Term \t Sequence")
+        print(f"{0:2}{0:10}\n{1:2}{1:10}")
+        
+        while term <= number:
+            fibonacci_1 = Fibonacci(term - 1)
+            fibonacci_2 = Fibonacci(term - 2)
+            print(f"{term:2}{round(fibonacci_2.binetsFormula() + fibonacci_1.binetsFormula()):10}")
+            term += 1
+        
+    except KeyboardInterrupt:
+        exit()
