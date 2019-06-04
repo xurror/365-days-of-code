@@ -16,6 +16,12 @@ def binary_to_decimal():
     binary = input("Binary Number: ")
     list(binary)
 
+    for digit in binary:
+        if digit != 1 or digit != 0:
+            print("The number is not a binary number")
+            print("Please enter a binary number")
+            return 0
+
     if int(binary[len(binary) - 1]) == 0:
         while i < (len(binary)-1):
             digit = int(binary[i])*2
@@ -38,12 +44,19 @@ def binary_to_decimal():
 
 if __name__ == '__main__':
     try:
-        choice = input("Enter (b)inary conversion or (d)ecimal converion: ")        
+        while True:
+            try:
+                choice = input("Enter (b)inary conversion or (d)ecimal converion: ")        
 
-        if choice == 'b' or choice == 'B':
-            decimal_to_binary()
-        elif choice == 'd' or choice == 'D':
-            binary_to_decimal()
+                if choice == 'b' or choice == 'B':
+                    decimal_to_binary()
+                elif choice == 'd' or choice == 'D':
+                    binary_to_decimal()
+                else:
+                    raise ValueError
+                
+            except ValueError:
+                print("Wrong input\nPlease try again")
 
     except KeyboardInterrupt:
         exit()
