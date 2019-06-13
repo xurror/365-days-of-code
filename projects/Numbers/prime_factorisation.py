@@ -1,7 +1,8 @@
 from math import sqrt
 
 # Check if n is a prime number
-def prime(n):
+# Method 1
+def prime1(n):
     isPrime = True        
 
     divisor = 2
@@ -10,6 +11,24 @@ def prime(n):
             isPrime = False
             break
         divisor += 1        
+    return isPrime
+
+# Check if n is a prime number
+# Method 1
+def prime2(n):
+    isPrime = True
+    if n<=1:
+        return False
+    else:
+        try:
+            for i in range(round(sqrt(n))):
+                if n%i == 0:
+                    return False
+                else: 
+                    isPrime = True
+        except ZeroDivisionError:
+            i = 1
+    
     return isPrime
             
 if __name__ == "__main__":
@@ -20,7 +39,7 @@ if __name__ == "__main__":
 
         i = 2
         while i <= n:        
-            if prime(i):
+            if prime1(i):
                 if n % i == 0:
                     print(f"{i:3}")
             i += 1
