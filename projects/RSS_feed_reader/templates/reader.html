@@ -1,4 +1,4 @@
-{% extends 'rss/base.html' %}
+{% extends 'base.html' %}
 
 
 {% block content %}
@@ -37,7 +37,7 @@
 
                         <h5 class="card-title">Headline: {{entry.title}}</h5>
                         <p class="card-text">Description: {{entry.description}}</p>
-                        <a href="{{entry.link}}" class="btn btn-primary">Visit Link</a>
+                        <a href="{{ entry.link }}" class="btn btn-primary">Visit Link</a>
 
                     </div>
 
